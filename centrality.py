@@ -5,11 +5,11 @@ import numpy as np
 
 def eig_vec_cent(cov, n_components=3, largest=True):
 
-    ''' Return "Eigenvector Centrality" from the covariance matrix
+    ''' Return "Eigenvector Centrality" from the covariance matrix (=cov)
             
     Args:
         
-        covar (required): pandas.core.frame.DataFrame
+        cov (required): pandas.core.frame.DataFrame
             Estimated covariance matrix on specific date.
         
         n_components (optional): int 
@@ -32,7 +32,7 @@ def eig_vec_cent(cov, n_components=3, largest=True):
 
         cov_dfs = cov_dfs.groupby('Dates').apply(eig_vec_cent)
 
-    * np.linalg.eigh returns the same result as np.linalg.eig when CovMatrix is symmetric.
+    * np.linalg.eigh returns the same result as np.linalg.eig when 'cov' is symmetric.
 
     '''
     if cov.isnull().values.any(): 
