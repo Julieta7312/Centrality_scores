@@ -3,7 +3,9 @@ import numpy as np
 
 
 
-def eig_vec_cent(cov, n_components=3, largest=True):
+def eig_vec_cent(cov: pd.DataFrame, 
+                 n_components: int = 3, 
+                 largest: bool = True) -> pd.Series:
 
     ''' Return "Eigenvector Centrality" from the covariance matrix (=cov)
             
