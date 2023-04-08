@@ -17,7 +17,7 @@ def eig_vec_cent(cov: pd.DataFrame,
         n_components (optional): int 
             Number of components used to estimate the centrality score
             
-        largest: boolean
+        largest (optional): bool
            If True, LARGEST n_components number of (eigen values, eigen vectors) will be used to compute centrality score.
            Else, LOWEST n_componets number of (eigen values, eigen vectors) will be used to compute centrality score.
     
@@ -27,8 +27,8 @@ def eig_vec_cent(cov: pd.DataFrame,
         
         Centrality scores = ( EigenValue_i * ( abs(EigenVector_i) / sum(abs(EigenVector_i)) ) ) / (Σ EigenValue_i)
         
-        i: ith of eigen value/vector
-        - Sum of Centrality scores of every asset will sum up to 1
+            i: ith of eigen value/vector
+            Sum of Centrality scores of every asset will sum up to 1
     
     Example:
 
